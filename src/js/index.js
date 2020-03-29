@@ -25,6 +25,7 @@ window.onload = function () {
                 timer = setInterval(goLeft, 50);
             })
     }
+
     //微信商城二级菜单
     wx()
     function wx() {
@@ -47,6 +48,7 @@ window.onload = function () {
                 .css('background', 'url(//js01.daoju.qq.com/zb/lolriotmall/pc/images/ico-menu.png) no-repeat -32px 0')
         })
     }
+
     //导航条二级菜单
     Two_nav()
     function Two_nav() {
@@ -64,6 +66,7 @@ window.onload = function () {
         })
 
     }
+
     //轮播图
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
@@ -83,6 +86,7 @@ window.onload = function () {
         keyboard: true,
         effect: false
     });
+
     //推荐商品渲染
     $.ajax({
         url: '../lib/index.json',
@@ -103,4 +107,33 @@ window.onload = function () {
             $('.main_ul').html(str);
         }
     })
+
+    //首页与列表页数据交互
+    $('.head_nav_ul_li_a').click(function(){
+
+        const DataId = $(this).attr('id');//获取点击的a身上的id属性
+
+        $.ajax({
+            url:'../lib/list.json',
+            dataType: 'json',
+            success: function (res){
+                let data = null;
+
+                for(let i = 0;i < res.length;i++){
+                    if(res[i].id == DataId){//如果id相同
+
+                        data = res[i];//接受数据
+
+                        break;//匹配后打断循环
+                    }
+                }
+                //将数据存储到localStorage
+                localStorage.setItem('listInfo',JSON.stringify(data));
+
+                //跳转页面到列表页
+                window.location.href = '../pages/list.html';
+            }
+        })
+    })
+
 }

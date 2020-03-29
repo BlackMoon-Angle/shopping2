@@ -361,91 +361,399 @@ header {
     width: 100%;
     margin: 0 auto;
 
-    .main_banner {
-        margin: 0 auto;
-        min-height: 424px;
-        height: auto;
+    .main_div {
         min-width: 1240px;
         width: 100%;
-        overflow: hidden;
+        height: 62px;
+        line-height: 62px;
+        text-align: left;
 
-        .swiper-wrapper {
+        a {
+            float: left;
+            color: #4b4b4b;
+            font-size: 16px;
+            display: block;
+            width: auto;
+        }
 
-            .swiper-slide {
-                margin: 0 auto;
-                min-height: 424px;
-                height: auto;
-                min-width: 1240px;
-                width: 100%;
-                background-image: center;
+        i {
+            float: left;
+            margin: 27px 15px 0 22px;
+            display: block;
+            width: 7px;
+            height: 10px;
+            background: url(../images/ico-menu.png) no-repeat -111px 0;
+        }
+    }
+
+    .main_banner {
+
+        div {
+            min-width: 1280px;
+            width: 100%;
+            min-height: 129px;
+            height: auto;
+            overflow: hidden;
+
+            a {
+                color: #000;
 
                 img {
                     margin: 0 auto;
-                    min-height: 424px;
-                    height: auto;
-                    min-width: 1240px;
+                    min-width: 1280px;
                     width: 100%;
-                    vertical-align: bottom;
-                    font-size: 0;
-                    border: 0;
+                    min-height: 129px;
+                    height: auto;
+                    display: block;
                 }
-            }
-        }
-
-        .swiper-pagination {
-            span {
-                width: 14px;
-                height: 14px;
-                background: white;
             }
         }
     }
 
-    .main_ul {
-        margin: 0 auto;
-        min-height: 193px;
-        height: auto;
-        min-width: 1240px;
+    article {
+        margin: 36px auto 90px;
+        min-width: 1280px;
         width: 100%;
-        zoom: 1;
-        overflow: hidden;
+        min-height: 700px;
+        height: auto;
 
-        li {
-            width: 25%;
-            // *margin-right: -1px;
+        .commodity_left {
+            width: 195px;
+            height: 700px;
             float: left;
-            min-height: 193px;
-            height: auto;
-            text-align: center;
-            zoom: 1;
+            display: inline;
 
-            a {
-                display: block;
-                margin: 0px auto;
-                width: 100%;
-                min-height: 193px;
-                height: auto;
-                font-size: 16px;
-                text-decoration: none;
-                color: #333;
+            // 主类
+            .commodity_left_div1 {
 
-                img {
-                    display: block;
-                    width: 100%;
-                    min-height: 193px;
+                dl {
+                    margin: 7px 0 40px 51px;
                     height: auto;
-                    vertical-align: bottom;
+                    color: #202020;
+
+                    dt {
+                        margin-bottom: 15px;
+                        width: 145px;
+                        height: 24px;
+                        line-height: 22px;
+                        text-indent: 12px;
+                        font-size: 22px;
+                        position: relative;
+                        font-weight: bold;
+
+                        i {
+                            position: absolute;
+                            top: 2px;
+                            left: 0;
+                            z-index: 1;
+                            display: block;
+                            width: 3px;
+                            height: 18px;
+                            background: url(../images/ico-menu.png) no-repeat -2px -125px;
+                        }
+                    }
+
+                    dd {
+                        width: 100%;
+                        height: 30px;
+                        line-height: 30px;
+                        text-indent: 12px;
+                        font-size: 14px;
+
+                        a {
+                            width: 100%;
+                            height: 30px;
+                            line-height: 30px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                    }
                 }
             }
 
-            p {
+            // 价格与分类
+            .commodity_left_dl {
+                margin: 7px 0 40px 51px;
+                height: auto;
+                color: #202020;
+
+                dt {
+                    margin-bottom: 15px;
+                    width: 145px;
+                    height: 24px;
+                    line-height: 22px;
+                    text-indent: 12px;
+                    font-size: 22px;
+                    position: relative;
+                    font-weight: bold;
+
+                    i {
+                        position: absolute;
+                        top: 2px;
+                        left: 0;
+                        z-index: 1;
+                        display: block;
+                        width: 3px;
+                        height: 18px;
+                        background: url(../images/ico-menu.png) no-repeat -2px -125px;
+                    }
+                }
+
+                dd {
+                    width: 100%;
+                    height: 30px;
+                    line-height: 30px;
+                    text-indent: 12px;
+                    font-size: 14px;
+
+                    a {
+                        width: 100%;
+                        height: 30px;
+                        line-height: 30px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .commodity_right {
+            width: 80%;
+            margin-right: 17px;
+            height: auto;
+            float: right;
+            display: inline;
+
+            .commodity_right_sort {
                 width: 100%;
-                height: 45px;
-                line-height: 35px;
-                text-align: center;
-                font-size: 15px;
-                font-weight: bold;
-                color: #222;
+                height: 38px;
+
+                .sort_div {
+                    width: 130px;
+                    height: auto;
+                    position: relative;
+                    z-index: 12;
+                    float: left;
+                    display: inline;
+
+                    div {
+                        width: 128px;
+                        height: 36px;
+                        line-height: 36px;
+                        border: 1px solid #bcbfc1;
+                        font-size: 15px;
+                        color: #919799;
+                        text-align: center;
+                        text-indent: -20px;
+                        cursor: pointer;
+
+                        i {
+                            position: absolute;
+                            top: 16px;
+                            right: 26px;
+                            display: block;
+                            width: 14px;
+                            height: 7px;
+                            background: url(../images/ico-menu.png) no-repeat -2px -2px;
+                        }
+                    }
+
+                    .sort_list {
+                        position: absolute;
+                        top: 37px;
+                        left: 0px;
+                        width: 128px;
+                        text-align: center;
+                        border: 1px solid #bcbfc1;
+                        border-bottom: none;
+                        font-size: 15px;
+                        z-index: 100;
+                        background: #fff;
+                        display: none;
+
+                        li {
+                            width: 128px;
+                            height: 36px;
+                            line-height: 36px;
+                            text-align: center;
+                            border-bottom: 1px solid #bcbfc1;
+                            color: #919799;
+                            cursor: pointer;
+                        }
+
+                        li:hover {
+                            background: #aeb2b3;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .commodity_box {
+                margin-top: 32px;
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+
+                ul {
+
+                    li {
+                        float: left;
+                        margin-bottom: 56px;
+                        width: 33.3%;
+                        height: auto;
+                        position: relative;
+                        overflow: hidden;
+
+                        i {
+                            position: absolute;
+                            bottom: 88px;
+                            right: 35px;
+                            z-index: 20;
+                            display: block;
+                            width: 19px;
+                            height: 17px;
+                            cursor: pointer;
+                            background: url(../images/ico-menu.png) no-repeat -2px -104px;
+                        }
+
+                        a {
+                            padding-right: 16px;
+                            height: 100%;
+                            display: block;
+                            position: relative;
+                            color: #303030;
+                            z-index: 1;
+                            overflow: hidden;
+
+                            .commodity_list_div_img {
+                                display: block;
+                                width: 100%;
+                                height: auto;
+                                vertical-align: bottom;
+
+                                img {
+                                    display: block;
+                                    width: 100%;
+                                    height: auto;
+                                    vertical-align: bottom;
+                                }
+                            }
+
+                            .commodity_list_div2_img {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: auto;
+                                display: none;
+
+                                img {
+                                    display: block;
+                                    width: 100%;
+                                    height: auto;
+                                    vertical-align: bottom;
+                                }
+                            }
+                        }
+
+                        .commodity_name {
+                            margin: 10px auto 0;
+                            width: 100%;
+                            height: 32px;
+                            line-height: 32px;
+                            text-align: center;
+                            font-size: 16px;
+                        }
+
+                        .commodity_price {
+                            width: 100%;
+                            text-align: center;
+                            height: 30px;
+                            line-height: 30px;
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+
+            .commodity_page {
+                width: 100%;
+                height: 38px;
+
+                .commodity_page_div {
+                    float: right;
+                    display: inline;
+
+                    div {
+                        margin: 0 16px 0 0;
+                        width: auto;
+                        height: 38px;
+                        float: right;
+                        line-height: 36px;
+                        font-size: 14px;
+
+                        span {
+                            float: left;
+                            color: #919799;
+                        }
+
+                        .p_prev {
+
+                            a {
+                                color: #919799;
+                                height: 36px;
+                                float: left;
+                                border: 1px solid #aeb2b3;
+                                text-align: center;
+                                margin-left: 5px;
+                                display: inline;
+                                background: #fff;
+                                padding: 0px 8px;
+                            }
+                        }
+
+                        .p_num {
+
+                            a {
+                                color: #919799;
+                                height: 36px;
+                                float: left;
+                                border: 1px solid #aeb2b3;
+                                text-align: center;
+                                margin-left: 5px;
+                                display: inline;
+                                background: #fff;
+                                padding: 0px 8px;
+                            }
+                        }
+
+                        .p_next {
+
+                            a {
+                                color: #919799;
+                                height: 36px;
+                                float: left;
+                                border: 1px solid #aeb2b3;
+                                text-align: center;
+                                margin-left: 5px;
+                                display: inline;
+                                background: #fff;
+                                padding: 0px 8px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -592,50 +900,6 @@ footer {
                     display: inline;
                 }
             }
-        }
-    }
-}
-
-.html_fiex_box {
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-
-    a {
-        width: 138px;
-        padding: 13px 10px;
-        font-size: 0;
-        height: 50px;
-        display: inline-block;
-        margin-bottom: 0;
-        font-weight: 400;
-        text-align: center;
-        touch-action: manipulation;
-        cursor: pointer;
-        background-image: none;
-        border: none;
-        white-space: nowrap;
-        user-select: none;
-        min-width: 50px;
-        color: #fff;
-        background-color: #4979ff;
-        box-sizing: border-box;
-        vertical-align: middle;
-
-        i {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            background-image: url(https://yzf.qq.com/xv/web/static/img/chat-btn.png);
-            background-size: 100% 100%;
-            margin-right: 10px;
-            vertical-align: top;
-        }
-
-        span {
-            display: inline-block;
-            font-size: 16px;
-            line-height: 24px;
         }
     }
 }

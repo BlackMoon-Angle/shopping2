@@ -4,7 +4,7 @@ window.onload = function () {
     function textMove() {
         var num = 0;
         function goLeft() {
-            if (num == -1578) {
+            if (num == -808) {
                 num = 0;
             }
             num -= 1;
@@ -12,7 +12,7 @@ window.onload = function () {
                 left: num
             })
             $(".head_top_div2_div_end").css({
-                left: (1578 + num)
+                left: (808 + num)
             })
         }
         //设置滚动速度
@@ -131,7 +131,7 @@ window.onload = function () {
                 localStorage.setItem('listInfo',JSON.stringify(data));
 
                 //跳转页面到列表页
-                window.location.href = '../pages/list.html' + 'id=' + DataId;
+                window.location.href = '../pages/list.html?id=' + DataId;
             }
         })
     })

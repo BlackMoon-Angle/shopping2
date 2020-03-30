@@ -4,7 +4,7 @@ window.onload = function () {
     function textMove() {
         var num = 0;
         function goLeft() {
-            if (num == -1578) {
+            if (num == -808) {
                 num = 0;
             }
             num -= 1;
@@ -12,7 +12,7 @@ window.onload = function () {
                 left: num
             })
             $(".head_top_div2_div_end").css({
-                left: (1578 + num)
+                left: (808 + num)
             })
         }
         //设置滚动速度
@@ -84,23 +84,6 @@ window.onload = function () {
         })
     }
 
-    //商品主视图切换事件
-    img_show()
-    function img_show() {
-        // 移入
-        $('.commodity_list').on('mouseenter', '.commodity_list_a', function () {
-            $(this)
-                .children('.commodity_list_div2_img')
-                .css('display', 'block')
-        });
-        // 移出
-        $('.commodity_list').on('mouseleave', '.commodity_list_a', function () {
-            $(this)
-                .children('.commodity_list_div2_img')
-                .css('display', 'none')
-        });
-    }
-
     //接受传递数据，列表页数据渲染
     list_rendering();
     function list_rendering() {
@@ -118,8 +101,6 @@ window.onload = function () {
             if (a_arr[i].id == info.id) {//如果id相同
 
                 a_arr[i].style.color = "#F94915";
-
-                console.log(a_arr[i])
 
                 break;//匹配后打断循环
             }
@@ -200,9 +181,9 @@ window.onload = function () {
                     list.forEach(item => {
 
                         str += `
-                    <li id="${item.list_id}">
+                    <li>
                         <i></i>
-                        <a class="commodity_list_a" href="javascript:;">
+                        <a id="${item.list_id}" class="commodity_list_a" href="javascript:;">
                             <div class="commodity_list_div_img">
                                 <img src="${item.img}"
                                     width="527" height="506">
@@ -221,21 +202,38 @@ window.onload = function () {
                 }
             }
         }
+        img_show()
     }
+    //商品主视图切换事件
+    function img_show() {
+        // 移入
+        $('.commodity_list').on('mouseenter', '.commodity_list_a', function () {
+            $(this)
+                .children('.commodity_list_div2_img')
+                .css('display', 'block')
+        });
+        // 移出
+        $('.commodity_list').on('mouseleave', '.commodity_list_a', function () {
+            $(this)
+                .children('.commodity_list_div2_img')
+                .css('display', 'none')
+        });
+    }
+
     //如果选择其他导航项
     //重新渲染列表页数据
-    $('.head_nav_ul_li_a').click(function(){
+    $('.head_nav_ul_li_a').click(function () {
 
         const DataId = $(this).attr('id');//获取点击的a身上的id属性
 
         $.ajax({
-            url:'../lib/list.json',
+            url: '../lib/list.json',
             dataType: 'json',
-            success: function (res){
+            success: function (res) {
                 let data = null;
 
-                for(let i = 0;i < res.length;i++){
-                    if(res[i].id == DataId){//如果id相同
+                for (let i = 0; i < res.length; i++) {
+                    if (res[i].id == DataId) {//如果id相同
 
                         data = res[i];//接受数据
 
@@ -243,10 +241,38 @@ window.onload = function () {
                     }
                 }
                 //将数据存储到localStorage
-                localStorage.setItem('listInfo',JSON.stringify(data));
+                localStorage.setItem('listInfo', JSON.stringify(data));
 
                 //跳转页面到列表页
-                window.location.href = '../pages/list.html';
+                window.location.href = '../pages/list.html?id=' + DataId;
+            }
+        })
+    })
+
+    //列表页与详细页数据交互
+    $('.commodity_list').on('click', '.commodity_list_a', function () {
+
+        const DataId = $(this).attr('id');//获取点击的a身上的id属性
+
+        $.ajax({
+            url: '../lib/detail.json',
+            dataType: 'json',
+            success: function (res) {
+                let data = null;
+
+                for (let i = 0; i < res.length; i++) {
+                    if (res[i].list_id == DataId) {//如果id相同
+
+                        data = res[i];//接受数据
+
+                        break;//匹配后打断循环
+                    }
+                }
+                //将数据存储到localStorage
+                localStorage.setItem('detailInfo', JSON.stringify(data));
+
+                // 跳转页面到列表页
+                window.location.href = '../pages/detail.html?id=' + DataId;
             }
         })
     })

@@ -39,9 +39,79 @@ window.onload = function () {
 
     }
 
+    //接受列表页数据，渲染
+    Data_rendering();
+    function Data_rendering() {
+        //拿到localStorage的数据
+        //解析
+        const info = JSON.parse(localStorage.getItem('detailInfo'));
+
+        //判断数是否存在
+        if (!info) {
+            alert('数据不存在！');
+            //跳转回列表页
+            window.location.href = '../pages/list.html';
+        }
+
+        //渲染页面
+        rendering();
+        function rendering() {
+            // 头部
+            $('.a1').text(info.head_title);
+            $('.a2').text(info.head_title2);
+            $('.a3').text(info.head_title3);
+            $('.a4').text(info.head_title4);
+
+            // 主视图
+            $('.mask_BigImg').attr('src', info.big_img);
+            //投影
+            $('.fdj_box > img').attr('src', info.big_img);
+
+            //商品名称
+            $('.info_head > h3').text(info.title);
+
+            //选项卡
+            option();
+            function option() {
+                let str = '';
+
+                info.left_list.forEach(item => {
+                    str += `
+                    <li>
+                        <a class="option_a" href="javascript:;"
+                            rel="${item.left_img}">
+                            <img src="${item.left_img}"
+                                width="34" height="34">
+                        </a>
+                    </li>
+                    `
+                })
+                $('.left_img_option_div_ul').html(str);
+            }
+
+            //规格
+            specifications();
+            function specifications() {
+                let str = '';
+
+                info.specifications.forEach(item => {
+                    str += `
+                    <li>
+                        <a>${item.size}</a>
+                    </li>
+                    `
+                })
+                $('.info_specifications_div_span2 > ul').html(str);
+            }
+
+            option_click();
+            fdj();
+            specifications_click();
+        }
+    }
+
     //选项卡
-    option()
-    function option() {
+    function option_click() {
         $('.left_img_option_div_ul').on('click', '.option_a', function () {
             // 修改主视图
             $(this)
@@ -62,7 +132,6 @@ window.onload = function () {
     }
 
     //放大镜
-    fdj()
     function fdj() {
         $(".mask").mouseover(function () {
             $(".float_layer").show()
@@ -99,5 +168,65 @@ window.onload = function () {
             })
         })
     }
+
+    // 规格点击事件
+    function specifications_click() {
+        // 默认第一个规格项为首选
+        $('.info_specifications_div_span2')
+            .children('ul')
+            .children('li')
+            .first()
+            .children('a')
+            .css({
+                "border": "1px solid #e70516",
+                "color": "#ed3029"
+            })
+
+        $('.info_specifications_div_span2').on('click', 'a', function () {
+
+            $(this)
+                .parents('ul')
+                .children('li')
+                .children()
+                .css({
+                    "border": "1px solid #e0e0e0",
+                    "color": "#333333"
+                })
+            $(this)
+                .css({
+                    "border": "1px solid #e70516",
+                    "color": "#ed3029"
+                })
+        })
+    }
+
+    //如果选择其他导航项
+    //跳回列表页数据
+    $('.head_nav_ul_li_a').click(function () {
+
+        const DataId = $(this).attr('id');//获取点击的a身上的id属性
+
+        $.ajax({
+            url: '../lib/list.json',
+            dataType: 'json',
+            success: function (res) {
+                let data = null;
+
+                for (let i = 0; i < res.length; i++) {
+                    if (res[i].id == DataId) {//如果id相同
+
+                        data = res[i];//接受数据
+
+                        break;//匹配后打断循环
+                    }
+                }
+                //将数据存储到localStorage
+                localStorage.setItem('listInfo', JSON.stringify(data));
+
+                //跳转页面到列表页
+                window.location.href = '../pages/list.html';
+            }
+        })
+    })
 
 }

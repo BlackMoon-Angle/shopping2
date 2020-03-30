@@ -131,7 +131,7 @@ window.onload = function () {
                 localStorage.setItem('listInfo',JSON.stringify(data));
 
                 //跳转页面到列表页
-                window.location.href = '../pages/list.html';
+                window.location.href = '../pages/list.html' + 'id=' + DataId;
             }
         })
     })

@@ -1,11 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>详细页</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/detail.css">
+
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../js/detail.js"></script>
 </head>
+
 <body>
-    
+    <!-- 头部 -->
+    <header>
+        <!-- 顶部 -->
+        <article class="head_top">
+            <!-- logo -->
+            <div class="head_top_div">
+                <a class="logo" href="../pages/index.html"></a>
+            </div>
+            <!-- 头部导航 -->
+            <div class="head_top_div3">
+                <a class="head_top_div3_a" href="javascript:;" style="display: block;">
+                    <span>你好，请登录</span>
+                </a>
+                <a class="head_top_div3_a" href="javascript:;">
+                    <i class="mcart"></i>
+                    <span>购物车</span>
+                </a>
+                <div class="head_top_div3_div" href="javascript:;">
+                    <i class="mser"></i>
+                    <span>客服咨询</span>
+                </div>
+                <div class="head_top_div3_div" id="wx_Two_nav">
+                    <i class="mwxin"></i>
+                    <span style="padding-right: 6px;">微信商城</span>
+                    <i class="marrl"></i>
+                    <!-- 隐藏二级菜单二维码 -->
+                    <div class="wx_div">
+                        <div class="mwx-codebg"></div>
+                        <div class="mwx-codeimg">
+                            <img src="//js01.daoju.qq.com/zb/lolriotmall/pc/images/wxcode.png" width="83" height="82"
+                                alt="微信二维码">
+                        </div>
+                        <p>扫码手机购买</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- 导航 -->
+        <article class="head_nav">
+            <!-- 导航条 -->
+            <ul class="head_nav_ul">
+                <li class="head_nav_ul_li">
+                    <a href="../pages/index.html">商城首页</a>
+                    <i class="menu-ico"></i>
+                </li>
+                <li class="head_nav_ul_li">
+                    <a class="head_nav_ul_li_a" id="01" href="javascript:;">雕塑手办</a>
+                    <i class="menu-ico"></i>
+                    <div class="head_nav_ul_li_div">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">大型雕塑</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">中型雕塑</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">限定手办</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">迷你手办</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">手办</a>
+                            </li>
+                        </ul>
+                        <a class="a_img" href="javascript:;">
+                            <img src="https://game.gtimg.cn/images/daojushop/zb/navigation/202001/20200114204809_486549.png"
+                                width="81" height="81" alt="雕塑手办">
+                        </a>
+                    </div>
+                </li>
+                <li class="head_nav_ul_li">
+                    <a class="head_nav_ul_li_a" id="02" href="javascript:;">毛绒玩偶</a>
+                    <i class="menu-ico"></i>
+                    <div class="head_nav_ul_li_div">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">玩偶</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">帽子</a>
+                            </li>
+                        </ul>
+                        <a class="a_img" href="javascript:;">
+                            <img src="https://game.gtimg.cn/images/daojushop/zb/navigation/202001/20200114203714_108027.png"
+                                width="81" height="81" alt="毛绒玩偶">
+                        </a>
+                    </div>
+                </li>
+                <li class="head_nav_ul_li">
+                    <a class="head_nav_ul_li_a" id="03" href="javascript:;">男女服饰</a>
+                    <i class="menu-ico"></i>
+                    <div class="head_nav_ul_li_div">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">卫衣&amp;夹克</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">T恤</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">其他</a>
+                            </li>
+                        </ul>
+                        <a class="a_img" href="javascript:;">
+                            <img src="https://game.gtimg.cn/images/daojushop/zb/navigation/202001/20200114204645_901074.png"
+                                width="81" height="81" alt="男女服饰">
+                        </a>
+                    </div>
+                </li>
+                <li class="head_nav_ul_li">
+                    <a class="head_nav_ul_li_a" id="04" href="javascript:;">赛事周边</a>
+                    <i class="menu-ico"></i>
+                    <div class="head_nav_ul_li_div">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">LPL X NIKE</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">LPL其他</a>
+                            </li>
+                        </ul>
+                        <a class="a_img" href="javascript:;">
+                            <img src="https://game.gtimg.cn/images/daojushop/zb/navigation/202001/20200114203114_300268.png"
+                                width="81" height="81" alt="赛事周边">
+                        </a>
+                    </div>
+                </li>
+                <li class="head_nav_ul_li">
+                    <a class="head_nav_ul_li_a" id="05" href="javascript:;">珠宝首饰</a>
+                    <i class="menu-ico"></i>
+                    <div class="head_nav_ul_li_div">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">项链</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">幸运珠</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">手链</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">配件</a>
+                            </li>
+                        </ul>
+                        <a class="a_img" href="javascript:;">
+                            <img src="https://game.gtimg.cn/images/daojushop/zb/navigation/201910/20191024202004_924555.png"
+                                width="81" height="81" alt="珠宝首饰">
+                        </a>
+                    </div>
+                </li>
+                <li class="head_nav_ul_li">
+                    <a class="head_nav_ul_li_a" id="06" href="javascript:;">其他</a>
+                    <i class="menu-ico"></i>
+                    <div class="head_nav_ul_li_div">
+                        <ul>
+                            <li>
+                                <a href="javascript:;">鼠标垫</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">手机壳</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">海报艺术</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">其他</a>
+                            </li>
+                        </ul>
+                        <a class="a_img" href="javascript:;">
+                            <img src="https://game.gtimg.cn/images/daojushop/zb/navigation/201911/20191120104028_416295.png"
+                                width="81" height="81" alt="其他">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <!-- 搜索框 -->
+            <div class="head_nav_div">
+                <div class="head_nav_div_div">
+                    <input type="" value="" maxlength="20" placeholder="阿狸">
+                    <a href="javascript:;">
+                        <i class="ico-menu mseach"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </header>
+    <main class="main_wrap">
+        <!-- 头部详细信息 -->
+        <div class="main_div">
+            <a class="main_div_a" href="../pages/index.html" style="text-indent: 50px;">商城首页</a>
+            <i></i>
+            <a class="main_div_a" href="javascript:;">雕塑手办</a>
+            <i></i>
+            <a class="main_div_a" href="javascript:;">迷你手办</a>
+            <i></i>
+            <a class="main_div_a" href="javascript:;">约德尔人迷你手办套装-限定组合</a>
+        </div>
+        <!-- 商品详细主体 -->
+        <div class="main_div2">
+            <!-- 主体 -->
+            <div class="main_div2_shopBox">
+                <!-- 左侧主视图与选项卡 -->
+                <div class="main_div2_shopBox_left">
+                    <!-- 主视图 -->
+                    <div class="left_BigImg pBigPic">
+                        <a class="mask" href="javascript:;">
+                            <!-- 放大镜遮罩层 -->
+                            <div class="fdj float_layer"></div>
+                            <!-- 大图 -->
+                            <img src="https://game.gtimg.cn/images/zb/x5/uploadImg/goods/201912/20191231200059_22287.big.jpg" width="570" height="570">
+                        </a>
+                        <!-- 放大镜投影盒子 -->
+                        <div class="fdj_box big_box">
+                            <img src="" alt="" width="920" height="880" style="position: absolute;">
+                        </div>
+                    </div>
+                    <!-- 底部隔层 -->
+                    <div class="bottom_interlayer">
+                        <a href="javascript:;">点击放大</a>
+                    </div>
+                    <!-- 选项卡 -->
+                    <div class="left_img_option">
+                        <div class="left_img_option_div">
+                            <ul class="left_img_option_div_ul">
+                                <li>
+                                    <a class="option_a" href="javascript:;"
+                                        rel="https://game.gtimg.cn/images/zb/x5/uploadImg/goods/201912/20191231200059_22287.big.jpg">
+                                        <img src="https://game.gtimg.cn/images/zb/x5/uploadImg/goods/201912/20191231200059_22287.big.jpg"
+                                            width="34" height="34">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="option_a" href="javascript:;"
+                                        rel="https://game.gtimg.cn/images/zb/x5/uploadImg/goods/201912/20191231200103_45733.big.jpg">
+                                        <img src="https://game.gtimg.cn/images/zb/x5/uploadImg/goods/201912/20191231200103_45733.big.jpg"
+                                            width="34" height="34">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="option_a" href="javascript:;"
+                                        rel="https://game.gtimg.cn/images/zb/x5/uploadImg/goods/201912/20191231200121_41281.big.jpg">
+                                        <img src="https://game.gtimg.cn/images/zb/x5/uploadImg/goods/201912/20191231200121_41281.big.jpg"
+                                            width="34" height="34">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="option_a" href="javascript:;"
+                                        rel="https://game.gtimg.cn/images/zb/x5/uploadImg/goods/201912/20191231200124_74314.big.jpg">
+                                        <img src="https://game.gtimg.cn/images/zb/x5/uploadImg/goods/201912/20191231200124_74314.big.jpg"
+                                            width="34" height="34">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="option_a" href="javascript:;"
+                                        rel="https://game.gtimg.cn/images/zb/x5/uploadImg/goods/201912/20191231200127_60147.big.jpg">
+                                        <img src="https://game.gtimg.cn/images/zb/x5/uploadImg/goods/201912/20191231200127_60147.big.jpg"
+                                            width="34" height="34">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 右侧商品信息与购买 -->
+                <div class="main_div2_shopBox_right">
+                    <div class="main_div2_shopBox_right_div">
+                        <!-- 信息 -->
+                        <div class="shop_info">
+                            <!-- 名字 -->
+                            <div class="info_head">
+                                <h3>约德尔人迷你手办套装-限定组合</h3>
+                            </div>
+                            <!-- 隔层1 -->
+                            <div class="info_interlayer"></div>
+                            <!-- 价格 -->
+                            <div class="info_pri">
+                                <div class="info_pri_div"></div>
+                                <div class="info_pri_div2">
+                                    <span class="info_pri_div2_span">现价：</span>
+                                    <span class="info_pri_div2_span2">
+                                        <font>¥</font>280.00
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- 隔层2 -->
+                            <div class="info_interlayer2"></div>
+                            <!-- 规格 -->
+                            <div class="info_specifications" style="height: 56px;">
+                                <div class="info_specifications_div">
+                                    <span class="info_specifications_div_span">规格：</span>
+                                    <span class="info_specifications_div_span2">
+                                        <ul>
+                                            <li>
+                                                <a>限定组合</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- 数量以及购买 -->
+                            <div class="info_buy_num">
+                                <div class="info_buy_num_div" style="height: 47px;">
+                                    <span class="info_buy_num_div_span">数量：</span>
+                                    <span class="info_buy_num_div_span2">
+                                        <a>-</a>
+                                    </span>
+                                    <span class="info_buy_num_div_span3">
+                                        <input type="text" value="1">
+                                    </span>
+                                    <span class="info_buy_num_div_span4">
+                                        <a>+</a>
+                                    </span>
+                                </div>
+                                <div class="info_buy_num_div2">
+                                    <span class="info_buy_num_div2_span">&nbsp;</span>
+                                    <span class="info_buy_num_div2_span2">
+                                        <a ihref="javascript:;">立即购买</a>
+                                    </span>
+                                    <span class="info_buy_num_div2_span3">
+                                        <a href="javascript:;">
+                                            <span>
+                                                <i></i>
+                                            </span>加入购物车
+                                        </a>
+                                    </span>
+                                    <div class="info_buy_num_div2_div">
+                                        <a href="javascript:;">收藏宝贝</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 售后 -->
+                            <div class="customer_service">
+                                <ul>
+                                    <li>
+                                        <span class="li_span"></span>
+                                        <a>7天无理由退换货</a>
+                                    </li>
+                                    <li>
+                                        <span class="li2_span"></span>
+                                        <a>100%官方正品</a>
+                                    </li>
+                                    <li>
+                                        <span class="li3_span"></span>
+                                        <a>全场每单满199元包邮</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>

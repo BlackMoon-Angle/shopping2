@@ -89,26 +89,7 @@ const serverHandler = () => {
                    source: '/gx', // 源, 你的代理标识符
                    // 你直接请求下面这个地址压根也拿不到东西, 因为跨域了
                    target: 'http://127.0.0.1/test.php' // 目标, 你要代理的地址
-                 },
-                 {
-                   source: '/gx2',
-                   target: 'http://127.0.0.1/xxx.php'
-                 },
-                 {
-                   //首页头部导航，公告数据请求代理
-                   source:'/headerInfo',
-                   target:'http://www.okbuy.com/login/headerInfo/0.6793523287138559'
-                 },
-                 {
-                   //第一个商品列表，数据请求
-                   source:'/shopList',
-                   target:'http://www.okbuy.com/ajax/homepage/index'
-                 },
-                 {
-                  //第二个商品列表，数据请求
-                  source:'/shopList2',
-                  target:'http://www.okbuy.com/ajax/homepage/index'
-                }
+                 }
                ]
              })) // 开启服务器
 }

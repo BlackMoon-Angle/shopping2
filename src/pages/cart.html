@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/cart.css">
+
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../js/cart.js"></script>
+
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <!-- 顶部 -->
+        <article class="head_top">
+            <!-- logo -->
+            <div class="head_top_div">
+                <a class="logo" href="../pages/index.html"></a>
+            </div>
+            <!-- 头部导航 -->
+            <div class="head_top_div3">
+                <a class="head_top_div3_a" href="javascript:;" style="display: block;">
+                    <span>你好，请登录</span>
+                </a>
+                <a class="head_top_div3_a" href="javascript:;">
+                    <i class="mcart"></i>
+                    <span>购物车</span>
+                </a>
+                <div class="head_top_div3_div" href="javascript:;">
+                    <i class="mser"></i>
+                    <span>客服咨询</span>
+                </div>
+                <div class="head_top_div3_div" id="wx_Two_nav">
+                    <i class="mwxin"></i>
+                    <span style="padding-right: 6px;">微信商城</span>
+                    <i class="marrl"></i>
+                    <!-- 隐藏二级菜单二维码 -->
+                    <div class="wx_div">
+                        <div class="mwx-codebg"></div>
+                        <div class="mwx-codeimg">
+                            <img src="//js01.daoju.qq.com/zb/lolriotmall/pc/images/wxcode.png" width="83" height="82"
+                                alt="微信二维码">
+                        </div>
+                        <p>扫码手机购买</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </header>
+    <main class="main_wrap">
+        <!-- 顶部隔层 -->
+        <div class="head_interlayer">
+            <div></div>
+        </div>
+        <!-- 购物车主体 -->
+        <div class="main_div">
+            <!-- 购物车左侧,商品信息 -->
+            <div class="left_buy">
+                <!-- 商品信息 -->
+                <div class="left_buy_div">
+                    <div class="buy_box">
+                       <!-- 渲染 -->
+                    </div>
+                </div>
+            </div>
+            <!-- 购物车右侧,结算 -->
+            <div class="right_buy">
+                <!-- 渲染 -->
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

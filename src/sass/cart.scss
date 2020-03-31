@@ -1,0 +1,585 @@
+body {
+    font-size: 12px;
+    font-family: "微软雅黑", "宋体";
+}
+
+header {
+    height: 76px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    zoom: 1;
+    min-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+
+    .head_top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        min-width: 1280px;
+        width: 100%;
+        height: 75px;
+        // overflow: 9999;
+        background: #090909;
+
+        .head_top_div {
+            float: left;
+            display: inline;
+            margin: 19px 0 0 50px;
+            width: 297px;
+            height: 39px;
+            position: relative;
+
+            .logo {
+                display: block;
+                width: 297px;
+                height: 39px;
+                z-index: 1;
+                background: url(//js01.daoju.qq.com/zb/lolriotmall/pc/images/ico-menu.png) no-repeat;
+                background-position: -2px -147px;
+            }
+        }
+
+        .head_top_div2 {
+            width: 440px;
+            margin: 25px 0 0 6px;
+            min-width: 230px;
+            max-width: 440px;
+            height: 28px;
+            line-height: 28px;
+            font-size: 14px;
+            color: #ffc000;
+            background: #363636;
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            position: relative;
+
+            div {
+                display: inline;
+                position: absolute;
+            }
+
+            .head_top_div2_div_end {
+                left: 1578px;
+            }
+        }
+
+        .head_top_div3 {
+            float: right;
+            display: inline;
+            margin: 22px 25px 0 0;
+            height: 38px;
+            line-height: 30px;
+            color: #a1a1a1;
+            position: relative;
+            font-size: 14px;
+            z-index: 1;
+
+            .head_top_div3_a {
+                color: #a1a1a1;
+                float: left;
+                padding-right: 20px;
+                display: block;
+                position: relative;
+                z-index: 2;
+
+                // 购物车
+                .mcart {
+                    float: left;
+                    margin: 3px 4px 0 0;
+                    display: block;
+                    width: 28px;
+                    height: 25px;
+                    background: url(//js01.daoju.qq.com/zb/lolriotmall/pc/images/ico-menu.png) no-repeat -2px -13px;
+                }
+            }
+
+            .head_top_div3_div {
+                float: left;
+                display: inline;
+                padding-right: 28px;
+                height: auto;
+                position: relative;
+                cursor: pointer;
+
+                //客服咨询
+                .mser {
+                    float: left;
+                    margin: 3px 4px 0 0;
+                    display: block;
+                    width: 24px;
+                    height: 26px;
+                    background: url(//js01.daoju.qq.com/zb/lolriotmall/pc/images/ico-menu.png) no-repeat -2px -383px;
+                }
+
+                //微信商城
+                .mwxin {
+                    float: left;
+                    margin: 5px 4px 0 0;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    background: url(//js01.daoju.qq.com/zb/lolriotmall/pc/images/ico-menu.png) no-repeat -2px -42px;
+                }
+
+                //微信商城二级菜单引导箭头
+                .marrl {
+                    float: left;
+                    position: absolute;
+                    top: 12px;
+                    right: 25px;
+                    z-index: 1;
+                    display: block;
+                    width: 6px;
+                    height: 6px;
+                    background: url(//js01.daoju.qq.com/zb/lolriotmall/pc/images/ico-menu.png) no-repeat -32px 0;
+                }
+
+                .wx_div {
+                    width: 90px;
+                    height: 110px;
+                    position: absolute;
+                    top: 53px;
+                    left: 0;
+                    z-index: 999;
+                    border-top: 1px solid #f94915;
+                    display: none;
+
+                    .mwx-codebg {
+                        width: 90px;
+                        height: 110px;
+                        background: #000;
+                        opacity: 0.65;
+                    }
+
+                    .mwx-codeimg {
+                        position: absolute;
+                        top: 4px;
+                        left: 4px;
+                        width: 82px;
+                        height: 82px;
+                        overflow: hidden;
+                        text-indent: 0;
+
+                        img {
+                            margin: 0 auto;
+                            width: 82px;
+                            height: 82px;
+                        }
+                    }
+
+                    p {
+                        position: absolute;
+                        bottom: 5px;
+                        left: 0;
+                        width: 100%;
+                        line-height: 14px;
+                        text-align: center;
+                        font-size: 14px;
+                        color: #e7e7e7;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main_wrap {
+    background: #FFF;
+    height: auto;
+    padding-top: 16px;
+    padding-bottom: 30px;
+    width: 1190px;
+    margin: 0px auto;
+
+    .head_interlayer {
+        width: 1190px;
+        margin: 0 auto;
+        height: 56px;
+        background: #efefef;
+        color: #666;
+        position: relative;
+
+        div {
+            width: 700px;
+            height: 56px;
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+
+    .main_div {
+        width: 1190px;
+        margin: 0px auto;
+        height: auto;
+        padding-top: 20px;
+        position: relative;
+
+        .left_buy {
+            float: left;
+            display: inline;
+            width: 880px;
+
+            .left_buy_div {
+
+                .buy_box {
+                    margin-bottom: 40px;
+
+                    .buy_box_head {
+                        zoom: 1;
+                        overflow: auto;
+                        height: 43px;
+                        background: #efefef;
+                        color: #000;
+                        width: 880px;
+
+                        li {
+                            float: left;
+                        }
+
+                        .buy_box_head_li {
+                            width: 60px;
+                            line-height: 43px;
+                            text-align: center;
+                            font-size: 14px;
+
+                            // 全选按钮
+                            input {
+                                width: 16px;
+                                height: 16px;
+                                position: relative;
+                                top: 4px;
+                            }
+                        }
+
+                        .buy_box_head_li2 {
+                            width: 348px;
+                            text-align: left;
+                            line-height: 43px;
+                            font-size: 14px;
+                        }
+
+                        .buy_box_head_li3 {
+                            width: 110px;
+                            line-height: 43px;
+                            text-align: center;
+                            font-size: 14px;
+                        }
+
+                        .buy_box_head_li4 {
+                            width: 152px;
+                            line-height: 43px;
+                            text-align: center;
+                            font-size: 14px;
+                        }
+
+                        .buy_box_head_li5 {
+                            width: 80px;
+                            line-height: 43px;
+                            text-align: center;
+                            font-size: 14px;
+                        }
+
+                        .buy_box_head_li6 {
+                            width: 130px;
+                            line-height: 43px;
+                            text-align: center;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .info_ul {
+                        zoom: 1;
+                        overflow: auto;
+                        border-bottom: 1px solid #e2e2e2;
+                        width: 880px;
+
+                        li {
+                            float: left;
+                        }
+
+                        .info_ul_li {
+                            width: 60px;
+                            height: 120px;
+                            text-align: center;
+                            position: relative;
+
+                            // 单选按钮
+                            input{
+                                width: 16px;
+                                height: 16px;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                top: 0;
+                                right: 0;
+                                margin: auto;
+                            }
+                        }
+
+                        .info_ul_li2 {
+                            text-align: left;
+                            width: 348px;
+                            height: 106px;
+                            padding-top: 14px;
+
+                            .info_ul_li_div {
+                                zoom: 1;
+                                overflow: auto;
+
+                                .info_ul_li_div_a {
+                                    cursor: pointer;
+                                    color: #000;
+
+                                    img {
+                                        width: 88px;
+                                        height: 88px;
+                                        float: left;
+                                        display: block;
+                                        margin-right: 10px;
+                                    }
+                                }
+
+                                .info_ul_li_div_div {
+                                    float: left;
+                                    display: inline;
+                                    height: 96px;
+                                    width: 210px;
+                                    color: #666;
+                                    line-height: 20px;
+
+                                    a {
+                                        cursor: pointer;
+                                        line-height: 24px;
+                                        color: #333;
+                                        font-size: 14px;
+                                        display: block;
+                                        height: 24px;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+
+                                        span {
+                                            display: inline;
+                                        }
+                                    }
+
+                                    .info_ul_li_div_div_div {
+
+                                        span {
+                                            color: #999;
+                                            display: inline;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .info_ul_li3 {
+                            padding-top: 48px;
+                            width: 110px;
+                            text-align: center;
+                            font-size: 14px;
+                        }
+
+                        .info_ul_li4 {
+                            padding-top: 44px;
+                            width: 152px;
+                            text-align: center;
+
+                            div {
+                                width: 90px;
+                                margin: 0px auto;
+
+                                a {
+                                    padding: 0px;
+                                    margin: 0px;
+                                    float: left;
+                                    display: block;
+                                    width: 20px;
+                                    height: 28px;
+                                    background: #e7e7e7;
+                                    cursor: pointer;
+
+                                    img {
+                                        padding: 0px;
+                                        margin: 0px;
+                                    }
+                                }
+
+                                input {
+                                    height: 26px;
+                                    line-height: 26px;
+                                    width: 48px;
+                                    font-size: 14px;
+                                    text-align: center;
+                                    border: 0px;
+                                    border-top: 1px solid #cacaca;
+                                    border-bottom: 1px solid #cacaca;
+                                    vertical-align: middle;
+                                    padding: 0px;
+                                    margin: 0px;
+                                    float: left;
+                                }
+                            }
+                        }
+
+                        .info_ul_li5 {
+                            padding-top: 48px;
+                            color: #666;
+                            width: 80px;
+                            text-align: center;
+
+                            span {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .info_ul_li6 {
+                            padding-top: 48px;
+                            width: 130px;
+                            text-align: center;
+
+                            a{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    .info_bottom {
+                        zoom: 1;
+                        overflow: auto;
+                        height: 43px;
+                        background: #fff;
+                        color: #000;
+                        border-bottom: 1px solid #e2e2e2;
+                        width: 880px;
+
+                        li {
+                            float: left;
+                        }
+
+                        // 底部全选按钮
+                        .info_bottom_li {
+                            width: 60px;
+                            line-height: 43px;
+                            text-align: center;
+                            font-size: 14px;
+
+                            input {
+                                width: 16px;
+                                height: 16px;
+                                position: relative;
+                                top: 4px;
+                            }
+                        }
+
+                        .info_bottom_li2 {
+                            width: 130px;
+
+                            a {
+                                cursor: pointer;
+                                line-height: 43px;
+                                height: 43px;
+                                display: block;
+                                color: #999;
+                                font-size: 12px;
+                                text-indent: 44px;
+                                background: url(//js01.daoju.qq.com/zb/lolriotmall/pc/images/buy/delete.jpg) no-repeat 28px center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .right_buy {
+            float: right;
+            display: inline;
+            width: 276px;
+
+            .right_buy_box {
+                width: 274px;
+                border: 1px #bababa solid;
+                border-top: 3px #fa322c solid;
+                padding-bottom: 4px;
+                background: #efefef;
+
+                h3 {
+                    line-height: 42px;
+                    height: 42px;
+                    background: url(//js01.daoju.qq.com/zb/lolriotmall/pc/images/buy/base.jpg) left -124px no-repeat #efefef;
+                    font-weight: normal;
+                    text-indent: 34px;
+                }
+
+                .right_buy_box_pay {
+                    background: #FFF;
+                    width: 266px;
+                    margin: 0px auto;
+                    height: auto;
+
+                    .pay_div {
+                        width: 240px;
+                        padding: 10px 13px;
+                        line-height: 26px;
+                        color: #666;
+                        font-size: 14px;
+
+                        a {
+                            margin-top: 10px;
+                            cursor: pointer;
+                            width: 240px;
+                            height: 46px;
+                            line-height: 46px;
+                            color: #FFF;
+                            display: block;
+                            background: #ed3029;
+                            font-size: 18px;
+                            text-align: center;
+                        }
+                    }
+
+                    .pay_div2 {
+                        width: 240px;
+                        padding: 10px 13px;
+                        line-height: 26px;
+                        color: #666;
+                        font-size: 14px;
+
+                        .pay_div2_div {
+                            zoom: 1;
+                            overflow: auto;
+                            font-size: 12px;
+                            padding-top: 0px;
+
+                            .pay_div2_div_div {
+                                float: left;
+                                display: inline;
+                                font-size: 12px;
+                                line-height: 60px;
+                                width: 60px;
+                                text-align: center;
+                            }
+
+                            .pay_div2_div_div2 {
+                                float: left;
+                                display: inline;
+                                line-height: 20px;
+                                border-left: 1px #e3e1e1 solid;
+                                padding-left: 10px;
+                                padding-top: 2px;
+                                padding-bottom: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

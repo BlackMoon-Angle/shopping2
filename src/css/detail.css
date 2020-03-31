@@ -440,6 +440,7 @@ header .head_nav .head_nav_div .head_nav_div_div a i {
   height: 440px;
   display: block;
   margin: 0px auto;
+  opacity: 0;
 }
 
 .main_wrap .main_div2 .main_div2_shopBox .main_div2_shopBox_left .left_BigImg .fdj_box {

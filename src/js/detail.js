@@ -63,12 +63,17 @@ window.onload = function () {
             $('.a4').text(info.head_title4);
 
             // 主视图
-            $('.mask_BigImg').attr('src', info.big_img);
+            $('.mask_BigImg')
+                .css('opacity', '1')
+                .attr('src', info.big_img);
             //投影
             $('.fdj_box > img').attr('src', info.big_img);
 
             //商品名称
             $('.info_head > h3').text(info.title);
+
+            // 价格
+            $('.info_pri_div2_span2').append("<font>¥</font>" + info.pri);
 
             //选项卡
             option();
@@ -107,6 +112,48 @@ window.onload = function () {
             option_click();
             fdj();
             specifications_click();
+        }
+        cart();
+        //详细页与购物车交互
+        function cart() {
+            $('.prodCartBtn').click(function () {
+
+                //先拿到数据，如果不存在数据，就用一个空数组代替
+                const cartList = JSON.parse(localStorage.getItem('cartList')) || [];
+
+                console.log(info)
+
+                //判断数据是否存在
+                let exits = cartList.some(item => {
+                    return item.list_id == info.list_id
+                })
+
+                if (exits) {
+
+                    let data = null;
+
+                    for (let i = 0; i < cartList.length; i++) {
+                        if (cartList[i].list_id == info.list_id) {
+                            data = cartList[i];
+                            break;
+                        }
+                    }
+                    //商品存在，如果持续点击添加购物车，则改变number数据
+                    data.number++;
+
+                    data.All_pri = (ata.number * data.pri);//总价格
+                }
+                else {
+                    //如果不存在，则为数据添加number,总价格等属性做记录
+                    info.number = 1;
+                    info.All_pri = info.pri;
+                    info.isSelect = false//默认不选中,用于全选事件
+                    cartList.push(info);
+                }
+
+                //将数据加入
+                localStorage.setItem('cartList', JSON.stringify(cartList));
+            })
         }
     }
 
@@ -224,7 +271,7 @@ window.onload = function () {
                 localStorage.setItem('listInfo', JSON.stringify(data));
 
                 //跳转页面到列表页
-                window.location.href = '../pages/list.html';
+                window.location.href = '../pages/list.html?id=' + DataId;
             }
         })
     })

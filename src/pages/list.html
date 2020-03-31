@@ -24,23 +24,21 @@
             <div class="head_top_div">
                 <a class="logo" href="../pages/index.html"></a>
             </div>
-            <!-- 走动文字公告 -->
-            <div class="head_top_div2">
-                <div class="head_top_div2_div_begin">
-                    欢迎召唤师光临英雄联盟周边商城，新品正在火热销售中！
-                    <span style="display: inline-block; width: 440px;"></span>
-                </div>
-                <div class="head_top_div2_div_end">
-                    欢迎召唤师光临英雄联盟周边商城，新品正在火热销售中！
-                    <span style="display: inline-block; width: 440px;"></span>
-                </div>
-            </div>
             <!-- 头部导航 -->
             <div class="head_top_div3">
-                <a class="head_top_div3_a" href="javascript:;" style="display: block;">
+                <!-- 登录状态 -->
+                <div class="login_online" style="display: none;">
+                    <span class="login_online_welcome">欢迎您,</span>
+                    <div class="login_online_div">
+                        <span class="login_online_div_username"></span>
+                    </div>
+                    <a class="out_btn" href="javascript:;">退出</a>
+                </div>
+                <!-- 未登录状态 -->
+                <a class="head_top_div3_a login_not_online" href="../pages/login.html" style="display: block;">
                     <span>你好，请登录</span>
                 </a>
-                <a class="head_top_div3_a" href="javascript:;">
+                <a class="head_top_div3_a" href="../pages/cart.html">
                     <i class="mcart"></i>
                     <span>购物车</span>
                 </a>

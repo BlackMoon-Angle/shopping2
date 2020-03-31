@@ -1,31 +1,4 @@
 window.onload = function () {
-    // 头部滚动公告
-    textMove()
-    function textMove() {
-        var num = 0;
-        function goLeft() {
-            if (num == -808) {
-                num = 0;
-            }
-            num -= 1;
-            $(".head_top_div2_div_begin").css({
-                left: num
-            })
-            $(".head_top_div2_div_end").css({
-                left: (808 + num)
-            })
-        }
-        //设置滚动速度
-        var timer = setInterval(goLeft, 50);
-        //设置鼠标经过时滚动停止
-        $(".head_top_div2").hover(function () {
-            clearInterval(timer);
-        },
-            function () {
-                timer = setInterval(goLeft, 50);
-            })
-    }
-
     //微信商城二级菜单
     wx()
     function wx() {
@@ -81,6 +54,34 @@ window.onload = function () {
             $(this)
                 .children('.sort_list')
                 .css('display', 'none')
+        })
+    }
+
+    //检查用户是否登录
+    user_inspect();
+    function user_inspect() {
+        const usermsg = sessionStorage.getItem("userInfo");
+        const JSON_usermsg = usermsg ? JSON.parse(usermsg) : {};
+        if (JSON_usermsg.user) {
+            $('.login_not_online')
+                .css('display', 'none')
+            $('.login_online')
+                .css('display', 'block')
+                .children('.login_online_div')
+                .children('.login_online_div_username')
+                .html(JSON_usermsg.user)
+
+        }
+        login_out();
+    }
+
+    //登录退出按钮
+    function login_out() {
+        $('.out_btn').click(function () {
+            //移除sessionStorage
+            sessionStorage.removeItem("userInfo");
+            //刷新页面
+            location.reload();
         })
     }
 

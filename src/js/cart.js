@@ -22,6 +22,34 @@ window.onload = function () {
         })
     }
 
+    //检查用户是否登录
+    user_inspect();
+    function user_inspect() {
+        const usermsg = sessionStorage.getItem("userInfo");
+        const JSON_usermsg = usermsg ? JSON.parse(usermsg) : {};
+        if (JSON_usermsg.user) {
+            $('.login_not_online')
+                .css('display', 'none')
+            $('.login_online')
+                .css('display', 'block')
+                .children('.login_online_div')
+                .children('.login_online_div_username')
+                .html(JSON_usermsg.user)
+
+        }
+        login_out();
+    }
+
+    //登录退出按钮
+    function login_out() {
+        $('.out_btn').click(function () {
+            //移除sessionStorage
+            sessionStorage.removeItem("userInfo");
+            //刷新页面
+            location.reload();
+        })
+    }
+
     //接受详细页数据，购物车渲染
     cart_info();
     function cart_info() {
@@ -31,7 +59,8 @@ window.onload = function () {
 
         //判断是否存在数据
         if (!cartList) {
-            alert('购物车为空！')
+            alert('购物车为空！快去购物吧!')
+            location.href = '../pages/list.html'
         }
         else {
             html_info();

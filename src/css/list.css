@@ -46,29 +46,46 @@ header .head_top .head_top_div .logo {
   background-position: -2px -147px;
 }
 
-header .head_top .head_top_div2 {
-  width: 440px;
-  margin: 25px 0 0 6px;
-  min-width: 230px;
-  max-width: 440px;
-  height: 28px;
-  line-height: 28px;
-  font-size: 14px;
-  color: #ffc000;
-  background: #363636;
-  overflow: hidden;
-  white-space: nowrap;
-  display: inline-block;
+header .head_top .login_online {
+  float: left;
+  width: auto;
+  height: 30px;
   position: relative;
+  z-index: 2;
 }
 
-header .head_top .head_top_div2 div {
+header .head_top .login_online .login_online_welcome {
+  display: block;
+  float: left;
+  padding-right: 6px;
+}
+
+header .head_top .login_online .login_online_div {
+  padding-right: 34px;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+  float: left;
   display: inline;
-  position: absolute;
 }
 
-header .head_top .head_top_div2 .head_top_div2_div_end {
-  left: 808px;
+header .head_top .login_online .login_online_div .login_online_div_username {
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  float: left;
+  padding-right: 6px;
+}
+
+header .head_top .login_online .out_btn {
+  color: #a1a1a1;
+  float: left;
+  padding-right: 20px;
+  display: block;
+  position: relative;
+  z-index: 2;
 }
 
 header .head_top .head_top_div3 {

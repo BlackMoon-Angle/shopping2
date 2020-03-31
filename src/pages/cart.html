@@ -25,7 +25,16 @@
             </div>
             <!-- 头部导航 -->
             <div class="head_top_div3">
-                <a class="head_top_div3_a" href="javascript:;" style="display: block;">
+                <!-- 登录状态 -->
+                <div class="login_online" style="display: none;">
+                    <span class="login_online_welcome">欢迎您,</span>
+                    <div class="login_online_div">
+                        <span class="login_online_div_username"></span>
+                    </div>
+                    <a class="out_btn" href="javascript:;">退出</a>
+                </div>
+                <!-- 未登录状态 -->
+                <a class="head_top_div3_a login_not_online" href="../pages/login.html" style="display: block;">
                     <span>你好，请登录</span>
                 </a>
                 <a class="head_top_div3_a" href="javascript:;">

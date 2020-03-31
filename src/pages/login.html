@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../js/login.js"></script>
+</head>
+
+<body>
+    <a class="logo" href="javascript:;" data-bind="click: home">QQ</a>
+    <div class="banner" data-bind="style:{backgroundImage:currentSideUrl()}"
+        style="background-image: url(&quot;https://cdn-go.cn/qq-web/zc.qq.com/latest/v3/img/01-3.jpg&quot;); width: 240px;">
+    </div>
+    <main class="head_box">
+        <div class="head_box_div">
+            <a href="javascript:;">意见反馈</a>
+        </div>
+        <div class="head_box_div2">
+            <div>简体中文&nbsp;
+                <img src="https://cdn-go.cn/qq-web/zc.qq.com/12ea5880/v3/img/down.png">
+                <img style="display: none;" src="https://cdn-go.cn/qq-web/zc.qq.com/12ea5880/v3/img/up.png">
+            </div>
+            <ul style="display: none;">
+                <li><a href="javascript:;">繁體中文</a></li>
+                <li><a href="javascript:;">English</a>
+                </li>
+            </ul>
+        </div>
+        <div class="head_box_div3">
+            <a href="javascript:;">
+                <div>QQ靓号</div>
+                <img src="https://cdn-go.cn/qq-web/zc.qq.com/12ea5880/v3/img/logo3.png">
+            </a>
+        </div>
+    </main>
+    <main class="main_wrap">
+        <div class="main_wrap_div">
+            <div class="user_box">
+                <div class="user_box_head">
+                    <div class="user_box_head_title">QQ登录</div>
+                    <div class="user_box_head_text2">每一天，乐在沟通。</div>
+                </div>
+                <form class="form_box">
+                    <!-- 账号 -->
+                    <div class="form_box_username">
+                        <div>
+                            <input class="login_username" type="text" placeholder="账号">
+                        </div>
+                    </div>
+                    <!-- 隔层 -->
+                    <div style="height: 8px;"></div>
+                    <!-- 密码 -->
+                    <div class="form_box_password">
+                        <div>
+                            <input class="login_password" type="password" placeholder="密码">
+                        </div>
+                    </div>
+                    <!-- 隔层 -->
+                    <div style="height: 8px;"></div>
+                    <!-- 注册提示 -->
+                    <div class="register_text">
+                        <p class="empty_btn" style="display: inline-block;float: left;color: #3487ff;cursor: pointer;">重置</p>
+                        <a href="../pages/register.html">没有账号？去注册</a>
+                    </div>
+                    <!-- 登录按钮 -->
+                    <div class="form_box_login">
+                        <input class="login_btn" type="button" value="登录">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -31,8 +31,8 @@ window.onload = function () {
     }
 
     //账号：焦点事件
-    username_focus();
-    function username_focus() {
+    username_focus_blur();
+    function username_focus_blur() {
         $('.login_username').focus(function () {
             $(this)
                 .parent()
@@ -55,8 +55,8 @@ window.onload = function () {
         })
     }
     //密码：焦点事件
-    password_focus();
-    function password_focus() {
+    password_focus_blur();
+    function password_focus_blur() {
         $('.login_password').focus(function () {
             $(this)
                 .parent()
@@ -146,21 +146,24 @@ window.onload = function () {
                     pass: $('.login_password').val(),
                 },
                 success: function (res) {
-                    if ($('.login_username').val() == '' && $('.login_password').val() == '') {
-                        alert('请输入账号与密码！')
-                        location.reload();
+                    if ($('.login_username').val() == '') {
+                        alert('账号或密码为空！请重新输入')
                     }
-                    else {
-                        let res_info = JSON.parse(res);
-                        if (res_info.code == 1) {
-                            sessionStorage.setItem("userInfo", JSON.stringify(res_info.msg));
-                            alert('登录成功！')
-                            location.href = '../pages/index.html'
-                        } else {
-                            alert('登录失败！账号或密码错误!')
-                            location.reload();
+                    else
+                        if ($('.login_password').val() == '') {
+                            alert('账号或密码为空！请重新输入')
                         }
-                    }
+                        else {
+                            let res_info = JSON.parse(res);
+                            if (res_info.code == 1) {
+                                sessionStorage.setItem("userInfo", JSON.stringify(res_info.msg));
+                                alert('登录成功！')
+                                location.href = '../pages/index.html'
+                            } else {
+                                alert('登录失败！账号或密码错误!')
+                                location.reload();
+                            }
+                        }
                 }
             })
         })

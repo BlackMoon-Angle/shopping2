@@ -61,8 +61,8 @@ window.onload = function () {
         })
     }
     //账号：焦点事件
-    username_focus()
-    function username_focus() {
+    username_focus_blur()
+    function username_focus_blur() {
         $('.register_username').focus(function () {
             $(this)
                 .parent()
@@ -99,8 +99,8 @@ window.onload = function () {
     }
 
     //密码：焦点事件与正则验证
-    password_focus();
-    function password_focus() {
+    password_focus_blur();
+    function password_focus_blur() {
         $('.register_password').focus(function () {
 
             $(this)
@@ -178,8 +178,8 @@ window.onload = function () {
     }
 
     //手机号：焦点事件与正则验证
-    phone_focus();
-    function phone_focus() {
+    phone_focus_blur();
+    function phone_focus_blur() {
         $('.register_phone').focus(function () {
             $(this)
                 .parent()
@@ -233,8 +233,8 @@ window.onload = function () {
     }
 
     //邮箱：焦点事件与正则验证
-    email_focus();
-    function email_focus() {
+    email_focus_blur();
+    function email_focus_blur() {
         $('.register_email').focus(function () {
             $(this)
                 .parent()

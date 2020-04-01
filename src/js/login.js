@@ -30,6 +30,91 @@ window.onload = function () {
         })
     }
 
+    //账号：焦点事件
+    username_focus();
+    function username_focus() {
+        $('.login_username').focus(function () {
+            $(this)
+                .parent()
+                .parent()
+                .siblings('.username_warning')
+                .html('请输入账号')
+                .css({
+                    'display': 'block',
+                    'color': 'green'
+                })
+        })
+        $('.login_username').blur(function () {
+            $(this)
+                .parent()
+                .parent()
+                .siblings('.username_warning')
+                .css({
+                    'display': 'none'
+                })
+        })
+    }
+    //密码：焦点事件
+    password_focus();
+    function password_focus() {
+        $('.login_password').focus(function () {
+            $(this)
+                .parent()
+                .siblings('.eyes_password')
+                .children('.Close_eyes')
+                .css('display', 'block')
+            eyes_password()
+            $(this)
+                .parent()
+                .parent()
+                .siblings('.password_warning')
+                .html('请输入密码')
+                .css({
+                    'display': 'block',
+                    'color': 'green'
+                })
+        })
+        $('.login_password').blur(function () {
+            if ($(this).val() == '') {
+                $(this)
+                    .parent()
+                    .siblings('.eyes_password')
+                    .children('.Close_eyes')
+                    .css('display', 'none')
+                $(this)
+                    .parent()
+                    .parent()
+                    .siblings('.password_warning')
+                    .css({
+                        'display': 'none'
+                    })
+            }
+            else {
+                $(this)
+                    .parent()
+                    .parent()
+                    .siblings('.password_warning')
+                    .css({
+                        'display': 'none'
+                    })
+            }
+        })
+    }
+    //密码查看
+    function eyes_password() {
+        $('.eyes_password').mouseenter(function () {
+            $(this).children('.Close_eyes').css('display', 'none')
+            $(this).children('.Open_eyes').css('display', 'block')
+            $(this).siblings('.login_div').children('.login_password').attr('type', 'text')
+        })
+        $('.eyes_password').mouseleave(function () {
+            $(this).children('.Close_eyes').css('display', 'block')
+            $(this).children('.Open_eyes').css('display', 'none')
+            $(this).siblings('.login_div').children('.login_password').attr('type', 'password')
+        })
+    }
+
+
     //重置按钮
     empty_btn();
     function empty_btn() {
@@ -68,7 +153,7 @@ window.onload = function () {
                     else {
                         let res_info = JSON.parse(res);
                         if (res_info.code == 1) {
-                            sessionStorage.setItem("userInfo",JSON.stringify(res_info.msg));
+                            sessionStorage.setItem("userInfo", JSON.stringify(res_info.msg));
                             alert('登录成功！')
                             location.href = '../pages/index.html'
                         } else {

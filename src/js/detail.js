@@ -149,8 +149,6 @@ window.onload = function () {
                 //先拿到数据，如果不存在数据，就用一个空数组代替
                 const cartList = JSON.parse(localStorage.getItem('cartList')) || [];
 
-                console.log(info)
-
                 //判断数据是否存在
                 let exits = cartList.some(item => {
                     return item.list_id == info.list_id
@@ -169,7 +167,7 @@ window.onload = function () {
                     //商品存在，如果持续点击添加购物车，则改变number数据
                     data.number++;
 
-                    data.All_pri = (ata.number * data.pri);//总价格
+                    data.All_pri = (data.number * data.pri);//总价格
                 }
                 else {
                     //如果不存在，则为数据添加number,总价格等属性做记录

@@ -36,6 +36,14 @@ window.onload = function () {
                 .children('.login_online_div_username')
                 .html(JSON_usermsg.user)
 
+            //登录后即可查看已购物数量
+            statistics_num();
+            //渲染页面
+            cart_info();
+        }
+        else{
+            alert('请登录后再查看您的购物车！');
+            location.href = '../pages/login.html'
         }
         login_out();
     }
@@ -50,8 +58,23 @@ window.onload = function () {
         })
     }
 
+    //购物数量统计
+    function statistics_num() {
+
+        const cartList_info = JSON.parse(localStorage.getItem('cartList')) || [];
+
+        let selectArr = cartList_info.filter(item => item.number)
+
+        let selectNumber = 0;//商品数量计算
+
+        selectArr.forEach(item => {
+            selectNumber += item.number
+        })
+
+        $('.span_number').html(selectNumber);
+    }
+
     //接受详细页数据，购物车渲染
-    cart_info();
     function cart_info() {
 
         //获取数据
@@ -178,7 +201,7 @@ window.onload = function () {
                 selectPrice += item.All_pri * 1
             })
 
-            str2 +=`
+            str2 += `
             <div class="right_buy_box">
                 <h3>我的购物车</h3>
                 <!-- 结算 -->
@@ -288,7 +311,7 @@ window.onload = function () {
                 //从数据中，匹配到id相同的数据，进行删除
                 cartList.forEach(item => {
                     if (item.list_id == id) {
-                        cartList.splice(item.index,1)
+                        cartList.splice(item.index, 1)
                     }
                 })
 

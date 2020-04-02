@@ -113,7 +113,23 @@ header {
                     display: block;
                     width: 28px;
                     height: 25px;
-                    background: url(//js01.daoju.qq.com/zb/lolriotmall/pc/images/ico-menu.png) no-repeat -2px -13px;
+                    background: url(../images/ico-menu.png) no-repeat -2px -13px;
+                }
+
+                //购物数量统计
+                .span_number {
+                    margin: 7px 0 0 0;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    font-size: 14px;
+                    color: #fff;
+                    background: url(../images/ico-menu.png) no-repeat -2px -287px;
+                    float: right;
+                    padding-right: 6px;
+                    margin-left: 6px;
                 }
             }
 

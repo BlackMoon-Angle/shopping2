@@ -53,6 +53,8 @@ window.onload = function () {
                 .children('.login_online_div_username')
                 .html(JSON_usermsg.user)
 
+            //登录后即可查看已购物数量
+            statistics_num();
         }
         login_out();
     }
@@ -146,43 +148,67 @@ window.onload = function () {
         function cart() {
             $('.prodCartBtn').click(function () {
 
-                //先拿到数据，如果不存在数据，就用一个空数组代替
-                const cartList = JSON.parse(localStorage.getItem('cartList')) || [];
+                const usermsg = sessionStorage.getItem("userInfo");
+                const JSON_usermsg = usermsg ? JSON.parse(usermsg) : {};
+                if (JSON_usermsg.user) {
+                    //先拿到数据，如果不存在数据，就用一个空数组代替
+                    const cartList = JSON.parse(localStorage.getItem('cartList')) || [];
 
-                //判断数据是否存在
-                let exits = cartList.some(item => {
-                    return item.list_id == info.list_id
-                })
+                    //判断数据是否存在
+                    let exits = cartList.some(item => {
+                        return item.list_id == info.list_id
+                    })
 
-                if (exits) {
+                    if (exits) {
 
-                    let data = null;
+                        let data = null;
 
-                    for (let i = 0; i < cartList.length; i++) {
-                        if (cartList[i].list_id == info.list_id) {
-                            data = cartList[i];
-                            break;
+                        for (let i = 0; i < cartList.length; i++) {
+                            if (cartList[i].list_id == info.list_id) {
+                                data = cartList[i];
+                                break;
+                            }
                         }
-                    }
-                    //商品存在，如果持续点击添加购物车，则改变number数据
-                    data.number++;
+                        //商品存在，如果持续点击添加购物车，则改变number数据
+                        data.number++;
 
-                    data.All_pri = (data.number * data.pri);//总价格
+                        data.All_pri = (data.number * data.pri);//总价格
+                    }
+                    else {
+                        //如果不存在，则为数据添加number,总价格等属性做记录
+                        info.number = 1;
+                        info.All_pri = info.pri;
+                        info.isSelect = false//默认不选中,用于全选事件
+                        cartList.push(info);
+                    }
+
+                    //将数据加入
+                    localStorage.setItem('cartList', JSON.stringify(cartList));
+
+                    statistics_num();
                 }
                 else {
-                    //如果不存在，则为数据添加number,总价格等属性做记录
-                    info.number = 1;
-                    info.All_pri = info.pri;
-                    info.isSelect = false//默认不选中,用于全选事件
-                    cartList.push(info);
+                    alert('请登录后再进行购物！')
+                    location.href = '../pages/login.html';
                 }
-
-                //将数据加入
-                localStorage.setItem('cartList', JSON.stringify(cartList));
-
-                alert("添加成功！ \n 可点击购物车进入查看！");
             })
         }
+    }
+
+    //购物数量统计
+    function statistics_num() {
+
+        const cartList_info = JSON.parse(localStorage.getItem('cartList')) || [];
+
+        let selectArr = cartList_info.filter(item => item.number)
+
+        let selectNumber = 0;//商品数量计算
+
+        selectArr.forEach(item => {
+            selectNumber += item.number
+        })
+
+        $('.span_number').html(selectNumber);
     }
 
     //选项卡

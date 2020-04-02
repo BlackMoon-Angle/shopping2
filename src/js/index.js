@@ -54,8 +54,27 @@ window.onload = function () {
                 .children('.login_online_div_username')
                 .html(JSON_usermsg.user)
 
+            //登录后即可查看已购物数量
+            statistics_num();
+
         }
         login_out();
+    }
+
+    //购物数量统计
+    function statistics_num() {
+
+        const cartList_info = JSON.parse(localStorage.getItem('cartList')) || [];
+
+        let selectArr = cartList_info.filter(item => item.number)
+
+        let selectNumber = 0;//商品数量计算
+
+        selectArr.forEach(item => {
+            selectNumber += item.number
+        })
+
+        $('.span_number').html(selectNumber);
     }
 
     //登录退出按钮

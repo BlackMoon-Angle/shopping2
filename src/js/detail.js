@@ -179,6 +179,8 @@ window.onload = function () {
 
                 //将数据加入
                 localStorage.setItem('cartList', JSON.stringify(cartList));
+
+                alert("添加成功！ \n 可点击购物车进入查看！");
             })
         }
     }

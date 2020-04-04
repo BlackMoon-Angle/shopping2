@@ -41,7 +41,7 @@ window.onload = function () {
             //渲染页面
             cart_info();
         }
-        else{
+        else {
             alert('请登录后再查看您的购物车！');
             location.href = '../pages/login.html'
         }
@@ -224,7 +224,7 @@ window.onload = function () {
             `
             $('.right_buy').html(str2);
         }
-
+        
         // 按钮事件绑定
         function bindEvent() {
 
@@ -281,6 +281,8 @@ window.onload = function () {
 
                 // //重新储存数据，防止页面刷新的时候，重置按钮
                 localStorage.setItem('cartList', JSON.stringify(cartList));
+
+                statistics_num()
             })
 
             //增加按钮
@@ -301,6 +303,8 @@ window.onload = function () {
 
                 // //重新储存数据，防止页面刷新的时候，重置按钮
                 localStorage.setItem('cartList', JSON.stringify(cartList));
+
+                statistics_num()
             })
 
             //删除按钮
@@ -320,6 +324,8 @@ window.onload = function () {
 
                 //重新储存数据，防止页面刷新的时候，重置按钮
                 localStorage.setItem('cartList', JSON.stringify(cartList));
+
+                statistics_num()
             })
 
             //清空按钮
@@ -331,6 +337,8 @@ window.onload = function () {
                 html_info();
                 // //重新储存数据，防止页面刷新的时候，重置按钮
                 localStorage.setItem('cartList', JSON.stringify(ls_list));
+
+                statistics_num()
 
                 cart_info();
             })
